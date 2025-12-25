@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zane Yu — Cyber</title>
+  <meta name="description" content="Cybersecurity, neon, cold blue. Zane Yu personal site." />
+  <style>
+    :root {
+      --bg: #05070c;
+      --panel: #0b1020;
+      --neon: #4da3ff;
+      --neon-soft: rgba(77,163,255,0.25);
+      --text: #e8f0ff;
+      --muted: #7f8fb3;
+      --border: rgba(77,163,255,0.18);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: radial-gradient(1200px 600px at 70% -10%, rgba(77,163,255,0.12), transparent 60%), var(--bg);
+      color: var(--text);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    a { color: var(--neon); text-decoration: none; }
+    a:hover { text-shadow: 0 0 8px var(--neon); }
+
+    .scanlines::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        rgba(255,255,255,0.02),
+        rgba(255,255,255,0.02) 1px,
+        transparent 1px,
+        transparent 3px
+      );
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 32px 20px 80px;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 64px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--neon);
+      text-shadow: 0 0 12px var(--neon-soft);
+    }
+
+    nav a {
+      margin-left: 28px;
+      color: var(--muted);
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -6px;
+      width: 0;
+      height: 1px;
+      background: var(--neon);
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after { width: 100%; }
+    nav a:hover { color: var(--text); }
+
+    .hero {
+      margin-bottom: 80px;
+      animation: fadeIn 1.2s ease forwards;
+    }
+
+    .greeting {
+      font-size: 14px;
+      color: var(--muted);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: 46px;
+      margin: 0 0 16px;
+      text-shadow: 0 0 18px var(--neon-soft);
+    }
+
+    .hero p {
+      max-width: 620px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    section { margin-bottom: 72px; }
+
+    .panel {
+      background: linear-gradient(180deg, rgba(77,163,255,0.06), transparent 60%), var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .panel h3 {
+      margin-top: 0;
+      color: var(--neon);
+    }
+
+    .soon {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: 120px;
+      font-size: 13px;
+      color: var(--muted);
+      opacity: 0.7;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 700px) {
+      .hero h1 { font-size: 34px; }
+    }
+  </style>
+</head>
+<body class="scanlines">
+  <div class="container">
+    <header>
+      <div class="logo">ZANE.YU</div>
+      <nav>
+        <a href="#projects">Personal Projects</a>
+        <a href="#products">Products</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="greeting" id="greeting"></div>
+      <h1>Cybersecurity · Systems · Thought</h1>
+      <p>
+        I explore the intersection of security, technology, and human values.
+        Focused on building systems that respect privacy, resist abuse, and
+        remain ethical by design. Cold logic, clear intent.
+      </p>
+    </section>
+
+    <section id="projects">
+      <div class="panel">
+        <h3>Personal Projects</h3>
+        <p>
+          Independent work, experiments, and long-term ideas.
+        </p>
+        <ul>
+          <li>
+            <a href="/zane">Introduction →</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="panel">
+        <h3>Products</h3>
+        <p class="soon">Coming soon. Stay sharp.</p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Zane Yu · All systems monitored
+    </footer>
+  </div>
+
+  <script>
+    const hour = new Date().getHours();
+    let greeting = "Good evening";
+    if (hour < 12) greeting = "Good morning";
+    else if (hour < 18) greeting = "Good afternoon";
+    document.getElementById('greeting').textContent = greeting;
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
 
