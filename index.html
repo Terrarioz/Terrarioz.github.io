@@ -333,6 +333,58 @@
       box-shadow: 0 0 12px var(--neon2-soft);
     }
 
+    /* ── PROJECT LIST ── */
+    .project-list {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .project-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: rgba(77,163,255,0.05);
+      border: 1px solid rgba(77,163,255,0.12);
+      border-radius: 12px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: inherit;
+      transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .project-item:hover {
+      background: rgba(77,163,255,0.12);
+      border-color: rgba(77,163,255,0.35);
+      box-shadow: 0 0 14px rgba(77,163,255,0.18);
+    }
+
+    .project-item-icon {
+      font-size: 20px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .project-item-body {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .project-item-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.5px;
+    }
+
+    .project-item-desc {
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
     /* ── LOGO / FOOTER ── */
     .logo-bar {
       text-align: center;
@@ -402,13 +454,23 @@
       <div class="index-grid">
 
         <!-- Personal Projects -->
-        <a href="#projects" class="index-card" id="projects">
+        <div class="index-card" id="projects">
           <span class="card-icon">⚡</span>
           <div class="card-label">Index 01</div>
           <div class="card-title">Personal Projects</div>
           <p class="card-desc">Independent work, experiments, and long-term ideas.</p>
-          <span class="card-cta">Explore →</span>
-        </a>
+
+          <!-- Project entries -->
+          <div class="project-list">
+            <a href="https://zaneyu.me/cov" target="_blank" rel="noopener noreferrer" class="project-item">
+              <span class="project-item-icon">🗡️</span>
+              <div class="project-item-body">
+                <div class="project-item-title">Chronicle of the Void</div>
+                <div class="project-item-desc">Lightweight RPG fantasy game. The fate of the world is in your hands.</div>
+              </div>
+            </a>
+          </div>
+        </div>
 
         <!-- Products -->
         <a href="#products" class="index-card" id="products">
