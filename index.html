@@ -47,7 +47,7 @@
     }
 
     /* ══════════════════════════
-       SPLASH / HERO SCREEN
+        SPLASH / HERO SCREEN
     ══════════════════════════ */
     #splash {
       position: relative;
@@ -59,7 +59,6 @@
       background: #03040a;
     }
 
-    /* animated white-based gradient background */
     #splash-bg {
       position: absolute;
       inset: 0;
@@ -89,7 +88,6 @@
       100% { background-position: 0% 50%; }
     }
 
-    /* dark vignette so the text pops */
     #splash::after {
       content: "";
       position: absolute;
@@ -122,7 +120,6 @@
       100% { opacity: 1; transform: scale(1); }
     }
 
-    /* scroll-down cue */
     #scroll-cue {
       position: absolute;
       bottom: 36px;
@@ -159,7 +156,7 @@
     }
 
     /* ══════════════════════════
-       MAIN CONTENT
+        MAIN CONTENT
     ══════════════════════════ */
     #main {
       background:
@@ -175,7 +172,6 @@
       margin: 0 auto;
     }
 
-    /* ── INTRO ── */
     .intro {
       text-align: center;
       padding: 20px 0 72px;
@@ -212,7 +208,6 @@
       margin: 0 auto;
     }
 
-    /* ── INDEX GRID ── */
     .index-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -229,7 +224,6 @@
       overflow: hidden;
       transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
       box-shadow: 0 0 50px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.04);
-      text-decoration: none;
       display: block;
       color: inherit;
     }
@@ -302,37 +296,6 @@
       margin-bottom: 24px;
     }
 
-    .card-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--neon);
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 8px 18px;
-      background: rgba(77,163,255,0.07);
-      transition: background 0.2s, box-shadow 0.2s;
-    }
-
-    .index-card:nth-child(2) .card-cta {
-      color: var(--neon2);
-      border-color: var(--border2);
-      background: rgba(167,139,250,0.07);
-    }
-
-    .index-card:hover .card-cta {
-      background: rgba(77,163,255,0.15);
-      box-shadow: 0 0 12px var(--neon-soft);
-    }
-
-    .index-card:nth-child(2):hover .card-cta {
-      background: rgba(167,139,250,0.15);
-      box-shadow: 0 0 12px var(--neon2-soft);
-    }
-
     /* ── PROJECT LIST ── */
     .project-list {
       margin-top: 24px;
@@ -354,10 +317,22 @@
       transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
     }
 
+    /* Index 02 project colors */
+    .index-card:nth-child(2) .project-item {
+      background: rgba(167,139,250,0.05);
+      border-color: rgba(167,139,250,0.12);
+    }
+
     .project-item:hover {
       background: rgba(77,163,255,0.12);
       border-color: rgba(77,163,255,0.35);
       box-shadow: 0 0 14px rgba(77,163,255,0.18);
+    }
+
+    .index-card:nth-child(2) .project-item:hover {
+      background: rgba(167,139,250,0.12);
+      border-color: rgba(167,139,250,0.35);
+      box-shadow: 0 0 14px rgba(167,139,250,0.18);
     }
 
     .project-item-icon {
@@ -385,7 +360,6 @@
       line-height: 1.6;
     }
 
-    /* ── LOGO / FOOTER ── */
     .logo-bar {
       text-align: center;
       padding-bottom: 36px;
@@ -425,7 +399,6 @@
 </head>
 <body>
 
-  <!-- ══ SPLASH SCREEN ══ -->
   <section id="splash">
     <div id="splash-bg"></div>
     <div id="welcome-text">Welcome</div>
@@ -437,7 +410,6 @@
     </div>
   </section>
 
-  <!-- ══ MAIN CONTENT ══ -->
   <main id="main">
     <div class="container">
 
@@ -453,14 +425,12 @@
 
       <div class="index-grid">
 
-        <!-- Personal Projects -->
         <div class="index-card" id="projects">
           <span class="card-icon">⚡</span>
           <div class="card-label">Index 01</div>
           <div class="card-title">Personal Projects</div>
           <p class="card-desc">Independent work, experiments, and long-term ideas.</p>
 
-          <!-- Project entries -->
           <div class="project-list">
             <a href="https://zaneyu.me/cov" target="_blank" rel="noopener noreferrer" class="project-item">
               <span class="project-item-icon">🗡️</span>
@@ -469,35 +439,35 @@
                 <div class="project-item-desc">Chrome based retro style RPG fantasy game. The fate of the world is in your hands.</div>
               </div>
             </a>
-            <a href="https://zaneyu.me/poker" target="_blank" rel="nonpener noreferrer" class="project-item">
+            <a href="https://zaneyu.me/poker" target="_blank" rel="noopener noreferrer" class="project-item">
               <span class="project-item-icon">🃏</span>
               <div class="project-item-body">
                 <div class="project-item-title">Poker</div>
                 <div class="project-item-desc">Lightweight poker games in your browser. Texas Holdem + Blackjack.</div>
               </div>
             </a>
-            <a href="https://zaneyu.me/poetrycloud" target="_blank" rel="nonpener noreferrer" class="project-item">
+            <a href="https://zaneyu.me/poetrycloud" target="_blank" rel="noopener noreferrer" class="project-item">
               <span class="project-item-icon">☁️</span>
               <div class="project-item-body">
                 <div class="project-item-title">Poetry Cloud 诗云</div>
                 <div class="project-item-desc">Inspired by Cixin Liu's novel</div>
               </div>
             </a>
-            <a href="https://zaneyu.me/disorder" target="_blank" rel="nonpener noreferrer" class="project-item">
+            <a href="https://zaneyu.me/disorder" target="_blank" rel="noopener noreferrer" class="project-item">
               <span class="project-item-icon">🌍</span>
               <div class="project-item-body">
                 <div class="project-item-title">DISORDER Alpha</div>
                 <div class="project-item-desc">New World Order</div>
               </div>
             </a>
-            <a href="https://zaneyu.me/highschool" target="_blank" rel="nonpener noreferrer" class="project-item">
+            <a href="https://zaneyu.me/highschool" target="_blank" rel="noopener noreferrer" class="project-item">
               <span class="project-item-icon">🏫</span>
               <div class="project-item-body">
                 <div class="project-item-title">Highschool Simulator</div>
                 <div class="project-item-desc">Survive the hell</div>
               </div>
             </a>
-              <a href="https://zaneyu.me/jet" target="_blank" rel="nonpener noreferrer" class="project-item">
+            <a href="https://zaneyu.me/jet" target="_blank" rel="noopener noreferrer" class="project-item">
               <span class="project-item-icon">✈️</span>
               <div class="project-item-body">
                 <div class="project-item-title">Fighter Jet</div>
@@ -507,14 +477,22 @@
           </div>
         </div>
 
-        <!-- Products -->
-        <a href="#products" class="index-card" id="products">
+        <div class="index-card" id="products">
           <span class="card-icon">📦</span>
           <div class="card-label">Index 02</div>
           <div class="card-title">Products</div>
-          <p class="card-desc">Coming soon. Stay sharp.</p>
-          <span class="card-cta">Coming Soon →</span>
-        </a>
+          <p class="card-desc">Featured tools and refined digital releases.</p>
+          
+          <div class="project-list">
+            <a href="https://zaneyu.me/zaneyproxy" target="_blank" rel="noopener noreferrer" class="project-item">
+              <span class="project-item-icon">🌐</span>
+              <div class="project-item-body">
+                <div class="project-item-title">ZaneyProxy</div>
+                <div class="project-item-desc">Embedded proxy site (in alpha testing)</div>
+              </div>
+            </a>
+          </div>
+        </div>
 
       </div>
 
